@@ -15,7 +15,6 @@
 
 // Variable for store the correct random number
 let correctNumber = getRandomNumber();
-console.log(correctNumber)
 
 window.onload = function () {
 	document.getElementById('number-submit').addEventListener('click', playGame);
@@ -26,14 +25,23 @@ window.onload = function () {
  * Functionality for playing the whole game
  */
 function playGame() {
-	const number = document.getElementById('number-guess').value;
+	const numberGuess = document.getElementById('number-guess').value;
+	displayResult(numberGuess)
 }
 
 /**
  * Show the result for if the guess it too high, too low, or correct
  * HINT: Use if, else if, else statement
  */
-// *CODE GOES BELOW HERE *
+function displayResult(numberGuess) {
+	if(numberGuess > correctNumber){
+		window.alert('to hight')
+	} else if(numberGuess < correctNumber ){
+		window.alert('to low')
+	} else{
+		window.alert('you guess the number!')
+	}
+}
 
 /**
  * Initialize a new game by resetting all values and content on the page
